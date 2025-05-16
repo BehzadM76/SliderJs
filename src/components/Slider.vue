@@ -53,13 +53,6 @@ const clickSlideImg = (index: number) => {
 const firstSlideIndex = ref(0)
 const lastSlideIndex = ref(props.imagesList.length > props.slidesPerView ? props.slidesPerView : props.imagesList.length)
 
-// watch(firstSlideIndex, () => {
-//   console.log("firs index", firstSlideIndex.value)
-// })
-//
-// watch(lastSlideIndex, () => {
-//   console.log("last index", lastSlideIndex.value)
-// })
 </script>
 
 <template>
@@ -93,13 +86,13 @@ const lastSlideIndex = ref(props.imagesList.length > props.slidesPerView ? props
 
       <!-- Thumbnails -->
       <div
-          class="bg-light-white-100/70 rounded-2.5xl gap-4 sm:gap-8 w-full py-4 px-3.5 sm:px-4 sm:py-2 flex justify-center">
+          class="bg-white/70 rounded-2xl gap-4 sm:gap-8 w-full py-4 px-3.5 sm:px-4 sm:py-2 flex justify-center">
         <img
             v-for="i in range(firstSlideIndex, lastSlideIndex)"
             :key="i"
             :src="props.imagesList[i]"
             alt=""
-            class="w-36 max-h-[60px] rounded-2.5xl sm:max-h-20 object-cover"
+            class="w-36 max-h-[60px] rounded-2xl sm:max-h-20 object-cover"
             @click="clickSlideImg(i)">
       </div>
     </div>
